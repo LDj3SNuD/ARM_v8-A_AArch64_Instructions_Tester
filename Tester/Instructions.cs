@@ -1,11 +1,9 @@
-// https://github.com/LDj3SNuD/ARM_v8-A_AArch64_Instructions_Tester/blob/master/Tester/Instructions.cs
-
 // https://meriac.github.io/archex/A64_v83A_ISA/index.xml
 // https://meriac.github.io/archex/A64_v83A_ISA/fpsimdindex.xml
 
 using System.Numerics;
 
-namespace Ryujinx.Tests.Cpu.Tester
+namespace Tester
 {
     using Types;
 
