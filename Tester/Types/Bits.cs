@@ -1,12 +1,10 @@
-// https://github.com/LDj3SNuD/ARM_v8-A_AArch64_Instructions_Tester/blob/master/Tester/Types/Bits.cs
-
 // https://github.com/dotnet/corefx/blob/master/src/System.Collections/src/System/Collections/BitArray.cs
 
 using System;
 using System.Collections;
 using System.Numerics;
 
-namespace Ryujinx.Tests.Cpu.Tester.Types
+namespace Tester.Types
 {
     internal sealed class Bits : ICollection, IEnumerable, IEquatable<Bits>
     {
