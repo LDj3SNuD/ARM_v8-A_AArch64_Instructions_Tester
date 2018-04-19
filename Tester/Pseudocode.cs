@@ -1,5 +1,3 @@
-// https://github.com/LDj3SNuD/ARM_v8-A_AArch64_Instructions_Tester/blob/master/Tester/Pseudocode.cs
-
 // https://meriac.github.io/archex/A64_v83A_ISA/shared_pseudocode.xml
 // https://alastairreid.github.io/asl-lexical-syntax/
 
@@ -22,7 +20,7 @@
 using System;
 using System.Numerics;
 
-namespace Ryujinx.Tests.Cpu.Tester
+namespace Tester
 {
     using Types;
 
