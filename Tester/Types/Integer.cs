@@ -1,7 +1,7 @@
 using System;
 using System.Numerics;
 
-namespace Ryujinx.Tests.Cpu.Tester.Types
+namespace Tester.Types
 {
     internal static class Integer
     {
