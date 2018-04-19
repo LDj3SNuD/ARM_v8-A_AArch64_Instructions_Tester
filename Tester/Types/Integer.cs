@@ -1,9 +1,7 @@
-// https://github.com/LDj3SNuD/ARM_v8-A_AArch64_Instructions_Tester/blob/master/Tester/Types/Integer.cs
-
 using System;
 using System.Numerics;
 
-namespace Ryujinx.Tests.Cpu.Tester.Types
+namespace Tester.Types
 {
     internal static class Integer
     {
