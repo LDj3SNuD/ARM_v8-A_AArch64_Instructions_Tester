@@ -19,6 +19,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -35,6 +36,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -51,6 +53,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -73,6 +76,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             int container_size = 16;
@@ -111,6 +115,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             int container_size = 32;
@@ -185,6 +190,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             Bits imm;
@@ -223,6 +229,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             Bits imm;
@@ -257,6 +264,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             Bits imm;
@@ -286,6 +294,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             Bits imm;
@@ -310,6 +319,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             Bits imm;
@@ -339,6 +349,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             Bits imm;
@@ -368,6 +379,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             Bits imm;
@@ -407,6 +419,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             Bits imm;
@@ -445,6 +458,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -464,6 +478,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -486,6 +501,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if shift == '11' then ReservedValue(); */
@@ -511,6 +527,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if shift == '11' then ReservedValue(); */
@@ -539,6 +556,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if sf == '0' && imm6<5> == '1' then ReservedValue(); */
@@ -562,6 +580,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if sf == '0' && imm6<5> == '1' then ReservedValue(); */
@@ -589,6 +608,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             ShiftType shift_type = DecodeShift(op2);
@@ -608,6 +628,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if sf == '0' && imm6<5> == '1' then ReservedValue(); */
@@ -633,6 +654,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if sf == '0' && imm6<5> == '1' then ReservedValue(); */
@@ -714,6 +736,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if sf == '0' && imm6<5> == '1' then ReservedValue(); */
@@ -739,6 +762,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if sf == '0' && imm6<5> == '1' then ReservedValue(); */
@@ -762,6 +786,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if N != sf then UnallocatedEncoding(); */
@@ -788,6 +813,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             ShiftType shift_type = DecodeShift(op2);
@@ -809,6 +835,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             ShiftType shift_type = DecodeShift(op2);
@@ -828,6 +855,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if sf == '0' && imm6<5> == '1' then ReservedValue(); */
@@ -853,6 +881,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if sf == '0' && imm6<5> == '1' then ReservedValue(); */
@@ -878,6 +907,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             ShiftType shift_type = DecodeShift(op2);
@@ -897,6 +927,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -918,6 +949,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -942,6 +974,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -968,6 +1001,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if shift == '11' then ReservedValue(); */
@@ -995,6 +1029,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* if shift == '11' then ReservedValue(); */
@@ -1025,6 +1060,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -1053,6 +1089,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             ExtendType extend_type = DecodeRegExtend(option);
@@ -1084,6 +1121,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             ExtendType extend_type = DecodeRegExtend(option);
@@ -1111,6 +1149,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             ExtendType extend_type = DecodeRegExtend(option);
@@ -1144,6 +1183,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             ExtendType extend_type = DecodeRegExtend(option);
@@ -1174,6 +1214,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             int R;
@@ -1203,6 +1244,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             int R;
@@ -1236,6 +1278,7 @@ namespace Tester
             /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             int R;
@@ -1265,6 +1308,7 @@ namespace Tester
         {
             /* Decode */
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             Bits flags = nzcv;
@@ -1286,6 +1330,7 @@ namespace Tester
         {
             /* Decode */
             int n = (int)UInt(Rn);
+
             int datasize = (sf ? 64 : 32);
 
             Bits flags = nzcv;
@@ -1312,6 +1357,7 @@ namespace Tester
             /* Decode */
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             Bits flags = nzcv;
@@ -1334,6 +1380,7 @@ namespace Tester
             /* Decode */
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             Bits flags = nzcv;
@@ -1360,6 +1407,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -1386,6 +1434,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -1412,6 +1461,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -1438,6 +1488,7 @@ namespace Tester
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -1465,6 +1516,7 @@ namespace Tester
         {
             /* Decode */
             int d = (int)UInt(Rd);
+
             int datasize = (sf ? 64 : 32);
 
             /* if sf == '0' && hw<1> == '1' then UnallocatedEncoding(); */
@@ -1484,6 +1536,7 @@ namespace Tester
         {
             /* Decode */
             int d = (int)UInt(Rd);
+
             int datasize = (sf ? 64 : 32);
 
             /* if sf == '0' && hw<1> == '1' then UnallocatedEncoding(); */
@@ -1504,6 +1557,7 @@ namespace Tester
         {
             /* Decode */
             int d = (int)UInt(Rd);
+
             int datasize = (sf ? 64 : 32);
 
             /* if sf == '0' && hw<1> == '1' then UnallocatedEncoding(); */
@@ -1528,6 +1582,7 @@ namespace Tester
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
             int a = (int)UInt(Ra);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
@@ -1548,6 +1603,7 @@ namespace Tester
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
             int a = (int)UInt(Ra);
+
             int datasize = (sf ? 64 : 32);
 
             /* Operation */
