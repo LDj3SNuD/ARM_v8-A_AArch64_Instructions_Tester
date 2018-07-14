@@ -1,5 +1,5 @@
-// https://meriac.github.io/archex/A64_v83A_ISA/index.xml
-// https://meriac.github.io/archex/A64_v83A_ISA/fpsimdindex.xml
+// https://developer.arm.com/products/architecture/a-profile/exploration-tools
+// ..\A64_v83A_ISA_xml_00bet6.1\ISA_v83A_A64_xml_00bet6.1_OPT\xhtml\
 
 using System.Numerics;
 
@@ -10,10 +10,11 @@ namespace Tester
     using static AArch64;
     using static Shared;
 
+    // index.html
     internal static class Base
     {
 #region "Alu"
-        // https://meriac.github.io/archex/A64_v83A_ISA/cls_int.xml
+        // cls_int.html
         public static void Cls(bool sf, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -30,7 +31,7 @@ namespace Tester
             X(d, result.SubBigInteger(datasize - 1, 0));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/clz_int.xml
+        // clz_int.html
         public static void Clz(bool sf, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -47,7 +48,7 @@ namespace Tester
             X(d, result.SubBigInteger(datasize - 1, 0));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/rbit_int.xml
+        // rbit_int.html
         public static void Rbit(bool sf, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -68,7 +69,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/rev16_int.xml
+        // rev16_int.html
         public static void Rev16(bool sf, Bits Rn, Bits Rd)
         {
             /* Bits opc = "01"; */
@@ -106,8 +107,8 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/rev32_int.xml
-        // (https://meriac.github.io/archex/A64_v83A_ISA/rev.xml)
+        // rev32_int.html
+        // (rev.html)
         public static void Rev32(bool sf, Bits Rn, Bits Rd)
         {
             /* Bits opc = "10"; */
@@ -145,8 +146,8 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/rev64_rev.xml
-        // (https://meriac.github.io/archex/A64_v83A_ISA/rev.xml)
+        // rev64_rev.html
+        // (rev.html)
         public static void Rev64(Bits Rn, Bits Rd)
         {
             /* Bits opc = "11"; */
@@ -184,7 +185,7 @@ namespace Tester
 #endregion
 
 #region "AluImm"
-        // https://meriac.github.io/archex/A64_v83A_ISA/add_addsub_imm.xml
+        // add_addsub_imm.html
         public static void Add_Imm(bool sf, Bits shift, Bits imm12, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -223,7 +224,7 @@ namespace Tester
             }
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/adds_addsub_imm.xml
+        // adds_addsub_imm.html
         public static void Adds_Imm(bool sf, Bits shift, Bits imm12, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -258,7 +259,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/and_log_imm.xml
+        // and_log_imm.html
         public static void And_Imm(bool sf, bool N, Bits immr, Bits imms, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -288,7 +289,7 @@ namespace Tester
             }
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/ands_log_imm.xml
+        // ands_log_imm.html
         public static void Ands_Imm(bool sf, bool N, Bits immr, Bits imms, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -313,7 +314,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/eor_log_imm.xml
+        // eor_log_imm.html
         public static void Eor_Imm(bool sf, bool N, Bits immr, Bits imms, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -343,7 +344,7 @@ namespace Tester
             }
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/orr_log_imm.xml
+        // orr_log_imm.html
         public static void Orr_Imm(bool sf, bool N, Bits immr, Bits imms, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -373,7 +374,7 @@ namespace Tester
             }
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/sub_addsub_imm.xml
+        // sub_addsub_imm.html
         public static void Sub_Imm(bool sf, Bits shift, Bits imm12, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -413,7 +414,7 @@ namespace Tester
             }
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/subs_addsub_imm.xml
+        // subs_addsub_imm.html
         public static void Subs_Imm(bool sf, Bits shift, Bits imm12, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -451,7 +452,7 @@ namespace Tester
 #endregion
 
 #region "AluRs"
-        // https://meriac.github.io/archex/A64_v83A_ISA/adc.xml
+        // adc.html
         public static void Adc(bool sf, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -471,7 +472,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/adcs.xml
+        // adcs.html
         public static void Adcs(bool sf, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -494,7 +495,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/add_addsub_shift.xml
+        // add_addsub_shift.html
         public static void Add_Rs(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -520,7 +521,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/adds_addsub_shift.xml
+        // adds_addsub_shift.html
         public static void Adds_Rs(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -549,7 +550,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/and_log_shift.xml
+        // and_log_shift.html
         public static void And_Rs(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -573,7 +574,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/ands_log_shift.xml
+        // ands_log_shift.html
         public static void Ands_Rs(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -599,10 +600,10 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/asrv.xml
+        // asrv.html
         public static void Asrv(bool sf, Bits Rm, Bits Rn, Bits Rd)
         {
-            Bits op2 = "10";
+            /*readonly */Bits op2 = "10";
 
             /* Decode */
             int d = (int)UInt(Rd);
@@ -621,7 +622,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/bic_log_shift.xml
+        // bic_log_shift.html
         public static void Bic(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -647,7 +648,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/bics.xml
+        // bics.html
         public static void Bics(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -675,7 +676,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/crc32.xml
+        // crc32.html
         public static void Crc32(bool sf, Bits Rm, Bits sz, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -702,7 +703,7 @@ namespace Tester
             X(d, BitReverse(Poly32Mod2(EOR(tempacc, tempval), poly)));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/crc32c.xml
+        // crc32c.html
         public static void Crc32c(bool sf, Bits Rm, Bits sz, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -729,7 +730,7 @@ namespace Tester
             X(d, BitReverse(Poly32Mod2(EOR(tempacc, tempval), poly)));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/eon.xml
+        // eon.html
         public static void Eon(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -755,7 +756,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/eor_log_shift.xml
+        // eor_log_shift.html
         public static void Eor_Rs(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -779,7 +780,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/extr.xml
+        // extr.html
         public static void Extr(bool sf, bool N, Bits Rm, Bits imms, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -804,10 +805,10 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/lslv.xml
+        // lslv.html
         public static void Lslv(bool sf, Bits Rm, Bits Rn, Bits Rd)
         {
-            Bits op2 = "00";
+            /*readonly */Bits op2 = "00";
 
             /* Decode */
             int d = (int)UInt(Rd);
@@ -826,10 +827,10 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/lsrv.xml
+        // lsrv.html
         public static void Lsrv(bool sf, Bits Rm, Bits Rn, Bits Rd)
         {
-            Bits op2 = "01";
+            /*readonly */Bits op2 = "01";
 
             /* Decode */
             int d = (int)UInt(Rd);
@@ -848,7 +849,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/orn_log_shift.xml
+        // orn_log_shift.html
         public static void Orn(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -874,7 +875,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/orr_log_shift.xml
+        // orr_log_shift.html
         public static void Orr_Rs(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -898,10 +899,10 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/rorv.xml
+        // rorv.html
         public static void Rorv(bool sf, Bits Rm, Bits Rn, Bits Rd)
         {
-            Bits op2 = "11";
+            /*readonly */Bits op2 = "11";
 
             /* Decode */
             int d = (int)UInt(Rd);
@@ -920,7 +921,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/sbc.xml
+        // sbc.html
         public static void Sbc(bool sf, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -942,7 +943,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/sbcs.xml
+        // sbcs.html
         public static void Sbcs(bool sf, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -967,7 +968,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/sdiv.xml
+        // sdiv.html
         public static void Sdiv(bool sf, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -994,7 +995,7 @@ namespace Tester
             X(d, result.SubBigInteger(datasize - 1, 0));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/sub_addsub_shift.xml
+        // sub_addsub_shift.html
         public static void Sub_Rs(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1022,7 +1023,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/subs_addsub_shift.xml
+        // subs_addsub_shift.html
         public static void Subs_Rs(bool sf, Bits shift, Bits Rm, Bits imm6, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1053,7 +1054,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/udiv.xml
+        // udiv.html
         public static void Udiv(bool sf, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1082,7 +1083,7 @@ namespace Tester
 #endregion
 
 #region "AluRx"
-        // https://meriac.github.io/archex/A64_v83A_ISA/add_addsub_ext.xml
+        // add_addsub_ext.html
         public static void Add_Rx(bool sf, Bits Rm, Bits option, Bits imm3, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1114,7 +1115,7 @@ namespace Tester
             }
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/adds_addsub_ext.xml
+        // adds_addsub_ext.html
         public static void Adds_Rx(bool sf, Bits Rm, Bits option, Bits imm3, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1142,7 +1143,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/sub_addsub_ext.xml
+        // sub_addsub_ext.html
         public static void Sub_Rx(bool sf, Bits Rm, Bits option, Bits imm3, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1176,7 +1177,7 @@ namespace Tester
             }
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/subs_addsub_ext.xml
+        // subs_addsub_ext.html
         public static void Subs_Rx(bool sf, Bits Rm, Bits option, Bits imm3, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1208,7 +1209,7 @@ namespace Tester
 #endregion
 
 #region "Bfm"
-        // https://meriac.github.io/archex/A64_v83A_ISA/bfm.xml
+        // bfm.html
         public static void Bfm(bool sf, bool N, Bits immr, Bits imms, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1238,7 +1239,7 @@ namespace Tester
             X(d, OR(AND(dst, NOT(tmask)), AND(bot, tmask)));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/sbfm.xml
+        // sbfm.html
         public static void Sbfm(bool sf, bool N, Bits immr, Bits imms, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1272,7 +1273,7 @@ namespace Tester
             X(d, OR(AND(top, NOT(tmask)), AND(bot, tmask)));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/ubfm.xml
+        // ubfm.html
         public static void Ubfm(bool sf, bool N, Bits immr, Bits imms, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1303,7 +1304,7 @@ namespace Tester
 #endregion
 
 #region "CcmpImm"
-        // https://meriac.github.io/archex/A64_v83A_ISA/ccmn_imm.xml
+        // ccmn_imm.html
         public static void Ccmn_Imm(bool sf, Bits imm5, Bits cond, Bits Rn, Bits nzcv)
         {
             /* Decode */
@@ -1325,7 +1326,7 @@ namespace Tester
             PSTATE.NZCV(flags);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/ccmp_imm.xml
+        // ccmp_imm.html
         public static void Ccmp_Imm(bool sf, Bits imm5, Bits cond, Bits Rn, Bits nzcv)
         {
             /* Decode */
@@ -1351,7 +1352,7 @@ namespace Tester
 #endregion
 
 #region "CcmpReg"
-        // https://meriac.github.io/archex/A64_v83A_ISA/ccmn_reg.xml
+        // ccmn_reg.html
         public static void Ccmn_Reg(bool sf, Bits Rm, Bits cond, Bits Rn, Bits nzcv)
         {
             /* Decode */
@@ -1374,7 +1375,7 @@ namespace Tester
             PSTATE.NZCV(flags);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/ccmp_reg.xml
+        // ccmp_reg.html
         public static void Ccmp_Reg(bool sf, Bits Rm, Bits cond, Bits Rn, Bits nzcv)
         {
             /* Decode */
@@ -1400,7 +1401,7 @@ namespace Tester
 #endregion
 
 #region "Csel"
-        // https://meriac.github.io/archex/A64_v83A_ISA/csel.xml
+        // csel.html
         public static void Csel(bool sf, Bits Rm, Bits cond, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1427,7 +1428,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/csinc.xml
+        // csinc.html
         public static void Csinc(bool sf, Bits Rm, Bits cond, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1454,7 +1455,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/csinv.xml
+        // csinv.html
         public static void Csinv(bool sf, Bits Rm, Bits cond, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1481,7 +1482,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/csneg.xml
+        // csneg.html
         public static void Csneg(bool sf, Bits Rm, Bits cond, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1511,7 +1512,7 @@ namespace Tester
 #endregion
 
 #region "Mov"
-        // https://meriac.github.io/archex/A64_v83A_ISA/movk.xml
+        // movk.html
         public static void Movk(bool sf, Bits hw, Bits imm16, Bits Rd)
         {
             /* Decode */
@@ -1531,7 +1532,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/movn.xml
+        // movn.html
         public static void Movn(bool sf, Bits hw, Bits imm16, Bits Rd)
         {
             /* Decode */
@@ -1552,7 +1553,7 @@ namespace Tester
             X(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/movz.xml
+        // movz.html
         public static void Movz(bool sf, Bits hw, Bits imm16, Bits Rd)
         {
             /* Decode */
@@ -1574,7 +1575,7 @@ namespace Tester
 #endregion
 
 #region "Mul"
-        // https://meriac.github.io/archex/A64_v83A_ISA/madd.xml
+        // madd.html
         public static void Madd(bool sf, Bits Rm, Bits Ra, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1595,7 +1596,7 @@ namespace Tester
             X(d, result.SubBigInteger(datasize - 1, 0));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/msub.xml
+        // msub.html
         public static void Msub(bool sf, Bits Rm, Bits Ra, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1616,7 +1617,7 @@ namespace Tester
             X(d, result.SubBigInteger(datasize - 1, 0));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/smaddl.xml
+        // smaddl.html
         public static void Smaddl(Bits Rm, Bits Ra, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1635,7 +1636,7 @@ namespace Tester
             X(d, result.SubBigInteger(63, 0));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/umaddl.xml
+        // umaddl.html
         public static void Umaddl(Bits Rm, Bits Ra, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1654,7 +1655,7 @@ namespace Tester
             X(d, result.SubBigInteger(63, 0));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/smsubl.xml
+        // smsubl.html
         public static void Smsubl(Bits Rm, Bits Ra, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1673,7 +1674,7 @@ namespace Tester
             X(d, result.SubBigInteger(63, 0));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/umsubl.xml
+        // umsubl.html
         public static void Umsubl(Bits Rm, Bits Ra, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1692,7 +1693,7 @@ namespace Tester
             X(d, result.SubBigInteger(63, 0));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/smulh.xml
+        // smulh.html
         public static void Smulh(Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1709,7 +1710,7 @@ namespace Tester
             X(d, result.SubBigInteger(127, 64));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/umulh.xml
+        // umulh.html
         public static void Umulh(Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1728,13 +1729,14 @@ namespace Tester
 #endregion
     }
 
+    // fpsimdindex.html
     internal static class SimdFp
     {
 #region "Simd"
-        // https://meriac.github.io/archex/A64_v83A_ISA/abs_advsimd.xml#ABS_asisdmisc_R
+        // abs_advsimd.html#ABS_asisdmisc_R
         public static void Abs_S(Bits size, Bits Rn, Bits Rd)
         {
-            bool U = false;
+            const bool U = false;
 
             /* Decode Scalar */
             int d = (int)UInt(Rd);
@@ -1775,10 +1777,10 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/abs_advsimd.xml#ABS_asimdmisc_R
+        // abs_advsimd.html#ABS_asimdmisc_R
         public static void Abs_V(bool Q, Bits size, Bits Rn, Bits Rd)
         {
-            bool U = false;
+            const bool U = false;
 
             /* Decode Vector */
             int d = (int)UInt(Rd);
@@ -1819,10 +1821,10 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/addp_advsimd_pair.xml
+        // addp_advsimd_pair.html
         public static void Addp_S(Bits size, Bits Rn, Bits Rd)
         {
-            /* Decode Scalar */
+            /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
 
@@ -1842,7 +1844,7 @@ namespace Tester
             V(d, Reduce(op, operand, esize));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/addv_advsimd.xml
+        // addv_advsimd.html
         public static void Addv_V(bool Q, Bits size, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -1866,12 +1868,12 @@ namespace Tester
             V(d, Reduce(op, operand, esize));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/cls_advsimd.xml
+        // cls_advsimd.html
         public static void Cls_V(bool Q, Bits size, Bits Rn, Bits Rd)
         {
-            bool U = false;
+            const bool U = false;
 
-            /* Decode */
+            /* Decode Vector */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
 
@@ -1908,12 +1910,12 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/clz_advsimd.xml
+        // clz_advsimd.html
         public static void Clz_V(bool Q, Bits size, Bits Rn, Bits Rd)
         {
-            bool U = true;
+            const bool U = true;
 
-            /* Decode */
+            /* Decode Vector */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
 
@@ -1950,10 +1952,741 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/neg_advsimd.xml#NEG_asisdmisc_R
+        // cmeq_advsimd_zero.html#CMEQ_asisdmisc_Z
+        public static void Cmeq_Zero_S(Bits size, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool op = true;
+
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size != '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int elements = 1;
+
+            CompareOp comparison;
+
+            switch (Bits.Concat(op, U))
+            {
+                case Bits bits when bits == "00":
+                    comparison = CompareOp.CompareOp_GT;
+                    break;
+                case Bits bits when bits == "01":
+                    comparison = CompareOp.CompareOp_GE;
+                    break;
+                default:
+                case Bits bits when bits == "10":
+                    comparison = CompareOp.CompareOp_EQ;
+                    break;
+                case Bits bits when bits == "11":
+                    comparison = CompareOp.CompareOp_LE;
+                    break;
+            }
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            BigInteger element;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = SInt(Elem(operand, e, esize));
+
+                switch (comparison)
+                {
+                    case CompareOp.CompareOp_GT:
+                        test_passed = (element > (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_GE:
+                        test_passed = (element >= (BigInteger)0);
+                        break;
+                    default:
+                    case CompareOp.CompareOp_EQ:
+                        test_passed = (element == (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LE:
+                        test_passed = (element <= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LT:
+                        test_passed = (element < (BigInteger)0);
+                        break;
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmeq_advsimd_zero.html#CMEQ_asimdmisc_Z
+        public static void Cmeq_Zero_V(bool Q, Bits size, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool op = true;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            CompareOp comparison;
+
+            switch (Bits.Concat(op, U))
+            {
+                case Bits bits when bits == "00":
+                    comparison = CompareOp.CompareOp_GT;
+                    break;
+                case Bits bits when bits == "01":
+                    comparison = CompareOp.CompareOp_GE;
+                    break;
+                default:
+                case Bits bits when bits == "10":
+                    comparison = CompareOp.CompareOp_EQ;
+                    break;
+                case Bits bits when bits == "11":
+                    comparison = CompareOp.CompareOp_LE;
+                    break;
+            }
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            BigInteger element;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = SInt(Elem(operand, e, esize));
+
+                switch (comparison)
+                {
+                    case CompareOp.CompareOp_GT:
+                        test_passed = (element > (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_GE:
+                        test_passed = (element >= (BigInteger)0);
+                        break;
+                    default:
+                    case CompareOp.CompareOp_EQ:
+                        test_passed = (element == (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LE:
+                        test_passed = (element <= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LT:
+                        test_passed = (element < (BigInteger)0);
+                        break;
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmge_advsimd_zero.html#CMGE_asisdmisc_Z
+        public static void Cmge_Zero_S(Bits size, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool op = false;
+
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size != '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int elements = 1;
+
+            CompareOp comparison;
+
+            switch (Bits.Concat(op, U))
+            {
+                case Bits bits when bits == "00":
+                    comparison = CompareOp.CompareOp_GT;
+                    break;
+                default:
+                case Bits bits when bits == "01":
+                    comparison = CompareOp.CompareOp_GE;
+                    break;
+                case Bits bits when bits == "10":
+                    comparison = CompareOp.CompareOp_EQ;
+                    break;
+                case Bits bits when bits == "11":
+                    comparison = CompareOp.CompareOp_LE;
+                    break;
+            }
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            BigInteger element;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = SInt(Elem(operand, e, esize));
+
+                switch (comparison)
+                {
+                    case CompareOp.CompareOp_GT:
+                        test_passed = (element > (BigInteger)0);
+                        break;
+                    default:
+                    case CompareOp.CompareOp_GE:
+                        test_passed = (element >= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_EQ:
+                        test_passed = (element == (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LE:
+                        test_passed = (element <= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LT:
+                        test_passed = (element < (BigInteger)0);
+                        break;
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmge_advsimd_zero.html#CMGE_asimdmisc_Z
+        public static void Cmge_Zero_V(bool Q, Bits size, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool op = false;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            CompareOp comparison;
+
+            switch (Bits.Concat(op, U))
+            {
+                case Bits bits when bits == "00":
+                    comparison = CompareOp.CompareOp_GT;
+                    break;
+                default:
+                case Bits bits when bits == "01":
+                    comparison = CompareOp.CompareOp_GE;
+                    break;
+                case Bits bits when bits == "10":
+                    comparison = CompareOp.CompareOp_EQ;
+                    break;
+                case Bits bits when bits == "11":
+                    comparison = CompareOp.CompareOp_LE;
+                    break;
+            }
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            BigInteger element;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = SInt(Elem(operand, e, esize));
+
+                switch (comparison)
+                {
+                    case CompareOp.CompareOp_GT:
+                        test_passed = (element > (BigInteger)0);
+                        break;
+                    default:
+                    case CompareOp.CompareOp_GE:
+                        test_passed = (element >= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_EQ:
+                        test_passed = (element == (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LE:
+                        test_passed = (element <= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LT:
+                        test_passed = (element < (BigInteger)0);
+                        break;
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmgt_advsimd_zero.html#CMGT_asisdmisc_Z
+        public static void Cmgt_Zero_S(Bits size, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool op = false;
+
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size != '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int elements = 1;
+
+            CompareOp comparison;
+
+            switch (Bits.Concat(op, U))
+            {
+                default:
+                case Bits bits when bits == "00":
+                    comparison = CompareOp.CompareOp_GT;
+                    break;
+                case Bits bits when bits == "01":
+                    comparison = CompareOp.CompareOp_GE;
+                    break;
+                case Bits bits when bits == "10":
+                    comparison = CompareOp.CompareOp_EQ;
+                    break;
+                case Bits bits when bits == "11":
+                    comparison = CompareOp.CompareOp_LE;
+                    break;
+            }
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            BigInteger element;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = SInt(Elem(operand, e, esize));
+
+                switch (comparison)
+                {
+                    default:
+                    case CompareOp.CompareOp_GT:
+                        test_passed = (element > (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_GE:
+                        test_passed = (element >= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_EQ:
+                        test_passed = (element == (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LE:
+                        test_passed = (element <= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LT:
+                        test_passed = (element < (BigInteger)0);
+                        break;
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmgt_advsimd_zero.html#CMGT_asimdmisc_Z
+        public static void Cmgt_Zero_V(bool Q, Bits size, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool op = false;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            CompareOp comparison;
+
+            switch (Bits.Concat(op, U))
+            {
+                default:
+                case Bits bits when bits == "00":
+                    comparison = CompareOp.CompareOp_GT;
+                    break;
+                case Bits bits when bits == "01":
+                    comparison = CompareOp.CompareOp_GE;
+                    break;
+                case Bits bits when bits == "10":
+                    comparison = CompareOp.CompareOp_EQ;
+                    break;
+                case Bits bits when bits == "11":
+                    comparison = CompareOp.CompareOp_LE;
+                    break;
+            }
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            BigInteger element;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = SInt(Elem(operand, e, esize));
+
+                switch (comparison)
+                {
+                    default:
+                    case CompareOp.CompareOp_GT:
+                        test_passed = (element > (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_GE:
+                        test_passed = (element >= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_EQ:
+                        test_passed = (element == (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LE:
+                        test_passed = (element <= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LT:
+                        test_passed = (element < (BigInteger)0);
+                        break;
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmle_advsimd.html#CMLE_asisdmisc_Z
+        public static void Cmle_S(Bits size, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool op = true;
+
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size != '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int elements = 1;
+
+            CompareOp comparison;
+
+            switch (Bits.Concat(op, U))
+            {
+                case Bits bits when bits == "00":
+                    comparison = CompareOp.CompareOp_GT;
+                    break;
+                case Bits bits when bits == "01":
+                    comparison = CompareOp.CompareOp_GE;
+                    break;
+                case Bits bits when bits == "10":
+                    comparison = CompareOp.CompareOp_EQ;
+                    break;
+                default:
+                case Bits bits when bits == "11":
+                    comparison = CompareOp.CompareOp_LE;
+                    break;
+            }
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            BigInteger element;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = SInt(Elem(operand, e, esize));
+
+                switch (comparison)
+                {
+                    case CompareOp.CompareOp_GT:
+                        test_passed = (element > (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_GE:
+                        test_passed = (element >= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_EQ:
+                        test_passed = (element == (BigInteger)0);
+                        break;
+                    default:
+                    case CompareOp.CompareOp_LE:
+                        test_passed = (element <= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LT:
+                        test_passed = (element < (BigInteger)0);
+                        break;
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmle_advsimd.html#CMLE_asimdmisc_Z
+        public static void Cmle_V(bool Q, Bits size, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool op = true;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            CompareOp comparison;
+
+            switch (Bits.Concat(op, U))
+            {
+                case Bits bits when bits == "00":
+                    comparison = CompareOp.CompareOp_GT;
+                    break;
+                case Bits bits when bits == "01":
+                    comparison = CompareOp.CompareOp_GE;
+                    break;
+                case Bits bits when bits == "10":
+                    comparison = CompareOp.CompareOp_EQ;
+                    break;
+                default:
+                case Bits bits when bits == "11":
+                    comparison = CompareOp.CompareOp_LE;
+                    break;
+            }
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            BigInteger element;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = SInt(Elem(operand, e, esize));
+
+                switch (comparison)
+                {
+                    case CompareOp.CompareOp_GT:
+                        test_passed = (element > (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_GE:
+                        test_passed = (element >= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_EQ:
+                        test_passed = (element == (BigInteger)0);
+                        break;
+                    default:
+                    case CompareOp.CompareOp_LE:
+                        test_passed = (element <= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LT:
+                        test_passed = (element < (BigInteger)0);
+                        break;
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmlt_advsimd.html#CMLT_asisdmisc_Z
+        public static void Cmlt_S(Bits size, Bits Rn, Bits Rd)
+        {
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size != '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int elements = 1;
+
+            CompareOp comparison = CompareOp.CompareOp_LT;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            BigInteger element;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = SInt(Elem(operand, e, esize));
+
+                switch (comparison)
+                {
+                    case CompareOp.CompareOp_GT:
+                        test_passed = (element > (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_GE:
+                        test_passed = (element >= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_EQ:
+                        test_passed = (element == (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LE:
+                        test_passed = (element <= (BigInteger)0);
+                        break;
+                    default:
+                    case CompareOp.CompareOp_LT:
+                        test_passed = (element < (BigInteger)0);
+                        break;
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmlt_advsimd.html#CMLT_asimdmisc_Z
+        public static void Cmlt_V(bool Q, Bits size, Bits Rn, Bits Rd)
+        {
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            CompareOp comparison = CompareOp.CompareOp_LT;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            BigInteger element;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = SInt(Elem(operand, e, esize));
+
+                switch (comparison)
+                {
+                    case CompareOp.CompareOp_GT:
+                        test_passed = (element > (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_GE:
+                        test_passed = (element >= (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_EQ:
+                        test_passed = (element == (BigInteger)0);
+                        break;
+                    case CompareOp.CompareOp_LE:
+                        test_passed = (element <= (BigInteger)0);
+                        break;
+                    default:
+                    case CompareOp.CompareOp_LT:
+                        test_passed = (element < (BigInteger)0);
+                        break;
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cnt_advsimd.html
+        public static void Cnt_V(bool Q, Bits size, Bits Rn, Bits Rd)
+        {
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size != '00' then ReservedValue(); */
+
+            int esize = 8;
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / 8;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+
+            BigInteger count;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                count = (BigInteger)BitCount(Elem(operand, e, esize));
+
+                Elem(result, e, esize, count.SubBigInteger(esize - 1, 0));
+            }
+
+            V(d, result);
+        }
+
+        // neg_advsimd.html#NEG_asisdmisc_R
         public static void Neg_S(Bits size, Bits Rn, Bits Rd)
         {
-            bool U = true;
+            const bool U = true;
 
             /* Decode Scalar */
             int d = (int)UInt(Rd);
@@ -1994,10 +2727,10 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/neg_advsimd.xml#NEG_asimdmisc_R
+        // neg_advsimd.html#NEG_asimdmisc_R
         public static void Neg_V(bool Q, Bits size, Bits Rn, Bits Rd)
         {
-            bool U = true;
+            const bool U = true;
 
             /* Decode Vector */
             int d = (int)UInt(Rd);
@@ -2038,10 +2771,297 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/sqxtn_advsimd.xml#SQXTN_asisdmisc_N
+        // not_advsimd.html
+        public static void Not_V(bool Q, Bits Rn, Bits Rd)
+        {
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            int esize = 8;
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / 8;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            Bits element;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = Elem(operand, e, esize);
+
+                Elem(result, e, esize, NOT(element));
+            }
+
+            V(d, result);
+        }
+
+        // rbit_advsimd.html
+        public static void Rbit_V(bool Q, Bits Rn, Bits Rd)
+        {
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            int esize = 8;
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / 8;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+            Bits element;
+            Bits rev = new Bits(esize);
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = Elem(operand, e, esize);
+
+                for (int i = 0; i <= esize - 1; i++)
+                {
+                    rev[esize - 1 - i] = element[i];
+                }
+
+                Elem(result, e, esize, rev);
+            }
+
+            V(d, result);
+        }
+
+        // rev16_advsimd.html
+        public static void Rev16_V(bool Q, Bits size, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool o0 = true;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            // size=esize:   B(0),  H(1),  S(1), D(S)
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+
+            // op=REVx: 64(0), 32(1), 16(2)
+            Bits op = Bits.Concat(o0, U);
+
+            // => op+size: 
+            //    64+B = 0, 64+H = 1, 64+S = 2, 64+D = X
+            //    32+B = 1, 32+H = 2, 32+S = X, 32+D = X
+            //    16+B = 2, 16+H = X, 16+S = X, 16+D = X
+            //     8+B = X,  8+H = X,  8+S = X,  8+D = X
+            // => 3-(op+size) (index bits in group)
+            //    64/B = 3, 64+H = 2, 64+S = 1, 64+D = X
+            //    32+B = 2, 32+H = 1, 32+S = X, 32+D = X
+            //    16+B = 1, 16+H = X, 16+S = X, 16+D = X
+            //     8+B = X,  8+H = X,  8+S = X,  8+D = X
+
+            // index bits within group: 1, 2, 3
+            /* if UInt(op) + UInt(size) >= 3 then UnallocatedEncoding(); */
+
+            int container_size;
+
+            switch (op)
+            {
+                default:
+                case Bits bits when bits == "10":
+                    container_size = 16;
+                    break;
+                case Bits bits when bits == "01":
+                    container_size = 32;
+                    break;
+                case Bits bits when bits == "00":
+                    container_size = 64;
+                    break;
+            }
+
+            int containers = datasize / container_size;
+            int elements_per_container = container_size / esize;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+
+            int element = 0;
+            int rev_element;
+
+            for (int c = 0; c <= containers - 1; c++)
+            {
+                rev_element = element + elements_per_container - 1;
+
+                for (int e = 0; e <= elements_per_container - 1; e++)
+                {
+                    Elem(result, rev_element, esize, Elem(operand, element, esize));
+
+                    element = element + 1;
+                    rev_element = rev_element - 1;
+                }
+            }
+
+            V(d, result);
+        }
+
+        // rev32_advsimd.html
+        public static void Rev32_V(bool Q, Bits size, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool o0 = false;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            // size=esize:   B(0),  H(1),  S(1), D(S)
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+
+            // op=REVx: 64(0), 32(1), 16(2)
+            Bits op = Bits.Concat(o0, U);
+
+            // => op+size: 
+            //    64+B = 0, 64+H = 1, 64+S = 2, 64+D = X
+            //    32+B = 1, 32+H = 2, 32+S = X, 32+D = X
+            //    16+B = 2, 16+H = X, 16+S = X, 16+D = X
+            //     8+B = X,  8+H = X,  8+S = X,  8+D = X
+            // => 3-(op+size) (index bits in group)
+            //    64/B = 3, 64+H = 2, 64+S = 1, 64+D = X
+            //    32+B = 2, 32+H = 1, 32+S = X, 32+D = X
+            //    16+B = 1, 16+H = X, 16+S = X, 16+D = X
+            //     8+B = X,  8+H = X,  8+S = X,  8+D = X
+
+            // index bits within group: 1, 2, 3
+            /* if UInt(op) + UInt(size) >= 3 then UnallocatedEncoding(); */
+
+            int container_size;
+
+            switch (op)
+            {
+                case Bits bits when bits == "10":
+                    container_size = 16;
+                    break;
+                default:
+                case Bits bits when bits == "01":
+                    container_size = 32;
+                    break;
+                case Bits bits when bits == "00":
+                    container_size = 64;
+                    break;
+            }
+
+            int containers = datasize / container_size;
+            int elements_per_container = container_size / esize;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+
+            int element = 0;
+            int rev_element;
+
+            for (int c = 0; c <= containers - 1; c++)
+            {
+                rev_element = element + elements_per_container - 1;
+
+                for (int e = 0; e <= elements_per_container - 1; e++)
+                {
+                    Elem(result, rev_element, esize, Elem(operand, element, esize));
+
+                    element = element + 1;
+                    rev_element = rev_element - 1;
+                }
+            }
+
+            V(d, result);
+        }
+
+        // rev64_advsimd.html
+        public static void Rev64_V(bool Q, Bits size, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool o0 = false;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            // size=esize:   B(0),  H(1),  S(1), D(S)
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+
+            // op=REVx: 64(0), 32(1), 16(2)
+            Bits op = Bits.Concat(o0, U);
+
+            // => op+size: 
+            //    64+B = 0, 64+H = 1, 64+S = 2, 64+D = X
+            //    32+B = 1, 32+H = 2, 32+S = X, 32+D = X
+            //    16+B = 2, 16+H = X, 16+S = X, 16+D = X
+            //     8+B = X,  8+H = X,  8+S = X,  8+D = X
+            // => 3-(op+size) (index bits in group)
+            //    64/B = 3, 64+H = 2, 64+S = 1, 64+D = X
+            //    32+B = 2, 32+H = 1, 32+S = X, 32+D = X
+            //    16+B = 1, 16+H = X, 16+S = X, 16+D = X
+            //     8+B = X,  8+H = X,  8+S = X,  8+D = X
+
+            // index bits within group: 1, 2, 3
+            /* if UInt(op) + UInt(size) >= 3 then UnallocatedEncoding(); */
+
+            int container_size;
+
+            switch (op)
+            {
+                case Bits bits when bits == "10":
+                    container_size = 16;
+                    break;
+                case Bits bits when bits == "01":
+                    container_size = 32;
+                    break;
+                default:
+                case Bits bits when bits == "00":
+                    container_size = 64;
+                    break;
+            }
+
+            int containers = datasize / container_size;
+            int elements_per_container = container_size / esize;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(datasize, n);
+
+            int element = 0;
+            int rev_element;
+
+            for (int c = 0; c <= containers - 1; c++)
+            {
+                rev_element = element + elements_per_container - 1;
+
+                for (int e = 0; e <= elements_per_container - 1; e++)
+                {
+                    Elem(result, rev_element, esize, Elem(operand, element, esize));
+
+                    element = element + 1;
+                    rev_element = rev_element - 1;
+                }
+            }
+
+            V(d, result);
+        }
+
+        // sqxtn_advsimd.html#SQXTN_asisdmisc_N
         public static void Sqxtn_S(Bits size, Bits Rn, Bits Rd)
         {
-            bool U = false;
+            const bool U = false;
 
             /* Decode Scalar */
             int d = (int)UInt(Rd);
@@ -2075,17 +3095,17 @@ namespace Tester
                 if (sat)
                 {
                     /* FPSR.QC = '1'; */
-                    FPSR[27] = true; // FIXME: Temporary solution.
+                    FPSR[27] = true; // TODO: Add named fields.
                 }
             }
 
             Vpart(d, part, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/sqxtn_advsimd.xml#SQXTN_asimdmisc_N
+        // sqxtn_advsimd.html#SQXTN_asimdmisc_N
         public static void Sqxtn_V(bool Q, Bits size, Bits Rn, Bits Rd)
         {
-            bool U = false;
+            const bool U = false;
 
             /* Decode Vector */
             int d = (int)UInt(Rd);
@@ -2119,17 +3139,97 @@ namespace Tester
                 if (sat)
                 {
                     /* FPSR.QC = '1'; */
-                    FPSR[27] = true; // FIXME: Temporary solution.
+                    FPSR[27] = true; // TODO: Add named fields.
                 }
             }
 
             Vpart(d, part, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/uqxtn_advsimd.xml#UQXTN_asisdmisc_N
+        // sqxtun_advsimd.html#SQXTUN_asisdmisc_N
+        public static void Sqxtun_S(Bits size, Bits Rn, Bits Rd)
+        {
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size == '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int part = 0;
+            int elements = 1;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(2 * datasize, n);
+            Bits element;
+            bool sat;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = Elem(operand, e, 2 * esize);
+
+                (Bits _result, bool _sat) = UnsignedSatQ(SInt(element), esize);
+                Elem(result, e, esize, _result);
+                sat = _sat;
+
+                if (sat)
+                {
+                    /* FPSR.QC = '1'; */
+                    FPSR[27] = true; // TODO: Add named fields.
+                }
+            }
+
+            Vpart(d, part, result);
+        }
+
+        // sqxtun_advsimd.html#SQXTUN_asimdmisc_N
+        public static void Sqxtun_V(bool Q, Bits size, Bits Rn, Bits Rd)
+        {
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+
+            /* if size == '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = 64;
+            int part = (int)UInt(Q);
+            int elements = datasize / esize;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand = V(2 * datasize, n);
+            Bits element;
+            bool sat;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element = Elem(operand, e, 2 * esize);
+
+                (Bits _result, bool _sat) = UnsignedSatQ(SInt(element), esize);
+                Elem(result, e, esize, _result);
+                sat = _sat;
+
+                if (sat)
+                {
+                    /* FPSR.QC = '1'; */
+                    FPSR[27] = true; // TODO: Add named fields.
+                }
+            }
+
+            Vpart(d, part, result);
+        }
+
+        // uqxtn_advsimd.html#UQXTN_asisdmisc_N
         public static void Uqxtn_S(Bits size, Bits Rn, Bits Rd)
         {
-            bool U = true;
+            const bool U = true;
 
             /* Decode Scalar */
             int d = (int)UInt(Rd);
@@ -2163,17 +3263,17 @@ namespace Tester
                 if (sat)
                 {
                     /* FPSR.QC = '1'; */
-                    FPSR[27] = true; // FIXME: Temporary solution.
+                    FPSR[27] = true; // TODO: Add named fields.
                 }
             }
 
             Vpart(d, part, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/uqxtn_advsimd.xml#UQXTN_asimdmisc_N
+        // uqxtn_advsimd.html#UQXTN_asimdmisc_N
         public static void Uqxtn_V(bool Q, Bits size, Bits Rn, Bits Rd)
         {
-            bool U = true;
+            const bool U = true;
 
             /* Decode Vector */
             int d = (int)UInt(Rd);
@@ -2207,7 +3307,7 @@ namespace Tester
                 if (sat)
                 {
                     /* FPSR.QC = '1'; */
-                    FPSR[27] = true; // FIXME: Temporary solution.
+                    FPSR[27] = true; // TODO: Add named fields.
                 }
             }
 
@@ -2216,10 +3316,10 @@ namespace Tester
 #endregion
 
 #region "SimdReg"
-        // https://meriac.github.io/archex/A64_v83A_ISA/add_advsimd.xml#ADD_asisdsame_only
+        // add_advsimd.html#ADD_asisdsame_only
         public static void Add_S(Bits size, Bits Rm, Bits Rn, Bits Rd)
         {
-            bool U = false;
+            const bool U = false;
 
             /* Decode Scalar */
             int d = (int)UInt(Rd);
@@ -2261,10 +3361,10 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/add_advsimd.xml#ADD_asimdsame_only
+        // add_advsimd.html#ADD_asimdsame_only
         public static void Add_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
         {
-            bool U = false;
+            const bool U = false;
 
             /* Decode Vector */
             int d = (int)UInt(Rd);
@@ -2306,11 +3406,11 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/addhn_advsimd.xml
+        // addhn_advsimd.html
         public static void Addhn_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
         {
-            bool U = false;
-            bool o1 = false;
+            const bool U = false;
+            const bool o1 = false;
 
             /* Decode */
             int d = (int)UInt(Rd);
@@ -2360,10 +3460,10 @@ namespace Tester
             Vpart(d, part, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/addp_advsimd_vec.xml
+        // addp_advsimd_vec.html
         public static void Addp_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
         {
-            /* Decode Vector */
+            /* Decode */
             int d = (int)UInt(Rd);
             int n = (int)UInt(Rn);
             int m = (int)UInt(Rm);
@@ -2395,7 +3495,7 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/and_advsimd.xml
+        // and_advsimd.html
         public static void And_V(bool Q, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -2416,7 +3516,7 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/bic_advsimd_reg.xml
+        // bic_advsimd_reg.html
         public static void Bic_V(bool Q, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -2439,7 +3539,7 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/bif_advsimd.xml
+        // bif_advsimd.html
         public static void Bif_V(bool Q, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -2462,7 +3562,7 @@ namespace Tester
             V(d, EOR(operand1, AND(EOR(operand1, operand4), operand3)));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/bit_advsimd.xml
+        // bit_advsimd.html
         public static void Bit_V(bool Q, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -2485,7 +3585,7 @@ namespace Tester
             V(d, EOR(operand1, AND(EOR(operand1, operand4), operand3)));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/bsl_advsimd.xml
+        // bsl_advsimd.html
         public static void Bsl_V(bool Q, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -2508,7 +3608,578 @@ namespace Tester
             V(d, EOR(operand1, AND(EOR(operand1, operand4), operand3)));
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/orn_advsimd.xml
+        // cmeq_advsimd_reg.html#CMEQ_asisdsame_only
+        public static void Cmeq_Reg_S(Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size != '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int elements = 1;
+
+            bool and_test = (U == false);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            Bits element1;
+            Bits element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Elem(operand1, e, esize);
+                element2 = Elem(operand2, e, esize);
+
+                if (and_test)
+                {
+                    test_passed = !IsZero(AND(element1, element2));
+                }
+                else
+                {
+                    test_passed = (element1 == element2);
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmeq_advsimd_reg.html#CMEQ_asimdsame_only
+        public static void Cmeq_Reg_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            bool and_test = (U == false);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            Bits element1;
+            Bits element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Elem(operand1, e, esize);
+                element2 = Elem(operand2, e, esize);
+
+                if (and_test)
+                {
+                    test_passed = !IsZero(AND(element1, element2));
+                }
+                else
+                {
+                    test_passed = (element1 == element2);
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmge_advsimd_reg.html#CMGE_asisdsame_only
+        public static void Cmge_Reg_S(Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool eq = true;
+
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size != '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int elements = 1;
+
+            bool unsigned = (U == true);
+            bool cmp_eq = (eq == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                test_passed = (cmp_eq ? element1 >= element2 : element1 > element2);
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmge_advsimd_reg.html#CMGE_asimdsame_only
+        public static void Cmge_Reg_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool eq = true;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool cmp_eq = (eq == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                test_passed = (cmp_eq ? element1 >= element2 : element1 > element2);
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmgt_advsimd_reg.html#CMGT_asisdsame_only
+        public static void Cmgt_Reg_S(Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool eq = false;
+
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size != '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int elements = 1;
+
+            bool unsigned = (U == true);
+            bool cmp_eq = (eq == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                test_passed = (cmp_eq ? element1 >= element2 : element1 > element2);
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmgt_advsimd_reg.html#CMGT_asimdsame_only
+        public static void Cmgt_Reg_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool eq = false;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool cmp_eq = (eq == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                test_passed = (cmp_eq ? element1 >= element2 : element1 > element2);
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmhi_advsimd.html#CMHI_asisdsame_only
+        public static void Cmhi_S(Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool eq = false;
+
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size != '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int elements = 1;
+
+            bool unsigned = (U == true);
+            bool cmp_eq = (eq == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                test_passed = (cmp_eq ? element1 >= element2 : element1 > element2);
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmhi_advsimd.html#CMHI_asimdsame_only
+        public static void Cmhi_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool eq = false;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool cmp_eq = (eq == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                test_passed = (cmp_eq ? element1 >= element2 : element1 > element2);
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmhs_advsimd.html#CMHS_asisdsame_only
+        public static void Cmhs_S(Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool eq = true;
+
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size != '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int elements = 1;
+
+            bool unsigned = (U == true);
+            bool cmp_eq = (eq == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                test_passed = (cmp_eq ? element1 >= element2 : element1 > element2);
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmhs_advsimd.html#CMHS_asimdsame_only
+        public static void Cmhs_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool eq = true;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool cmp_eq = (eq == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                test_passed = (cmp_eq ? element1 >= element2 : element1 > element2);
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmtst_advsimd.html#CMTST_asisdsame_only
+        public static void Cmtst_S(Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+
+            /* Decode Scalar */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size != '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = esize;
+            int elements = 1;
+
+            bool and_test = (U == false);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            Bits element1;
+            Bits element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Elem(operand1, e, esize);
+                element2 = Elem(operand2, e, esize);
+
+                if (and_test)
+                {
+                    test_passed = !IsZero(AND(element1, element2));
+                }
+                else
+                {
+                    test_passed = (element1 == element2);
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // cmtst_advsimd.html#CMTST_asimdsame_only
+        public static void Cmtst_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+
+            /* Decode Vector */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            bool and_test = (U == false);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            Bits element1;
+            Bits element2;
+
+            bool test_passed;
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Elem(operand1, e, esize);
+                element2 = Elem(operand2, e, esize);
+
+                if (and_test)
+                {
+                    test_passed = !IsZero(AND(element1, element2));
+                }
+                else
+                {
+                    test_passed = (element1 == element2);
+                }
+
+                Elem(result, e, esize, test_passed ? Ones(esize) : Zeros(esize));
+            }
+
+            V(d, result);
+        }
+
+        // eor_advsimd.html
+        public static void Eor_V(bool Q, Bits Rm, Bits Rn, Bits Rd)
+        {
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            int datasize = (Q ? 128 : 64);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits operand1 = V(datasize, m);
+            Bits operand2 = Zeros(datasize);
+            Bits operand3 = Ones(datasize);
+            Bits operand4 = V(datasize, n);
+
+            Bits result = EOR(operand1, AND(EOR(operand2, operand4), operand3));
+
+            V(d, result);
+        }
+
+        // orn_advsimd.html
         public static void Orn_V(bool Q, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -2531,7 +4202,7 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/orr_advsimd_reg.xml
+        // orr_advsimd_reg.html
         public static void Orr_V(bool Q, Bits Rm, Bits Rn, Bits Rd)
         {
             /* Decode */
@@ -2552,11 +4223,11 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/raddhn_advsimd.xml
+        // raddhn_advsimd.html
         public static void Raddhn_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
         {
-            bool U = true;
-            bool o1 = false;
+            const bool U = true;
+            const bool o1 = false;
 
             /* Decode */
             int d = (int)UInt(Rd);
@@ -2606,11 +4277,11 @@ namespace Tester
             Vpart(d, part, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/rsubhn_advsimd.xml
+        // rsubhn_advsimd.html
         public static void Rsubhn_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
         {
-            bool U = true;
-            bool o1 = true;
+            const bool U = true;
+            const bool o1 = true;
 
             /* Decode */
             int d = (int)UInt(Rd);
@@ -2660,10 +4331,188 @@ namespace Tester
             Vpart(d, part, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/sub_advsimd.xml#SUB_asisdsame_only
+        // saba_advsimd.html
+        public static void Saba_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool ac = true;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size == '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool accumulate = (ac == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+            Bits absdiff;
+
+            Bits result = (accumulate ? V(datasize, d) : Zeros(datasize));
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                absdiff = Abs(element1 - element2).SubBigInteger(esize - 1, 0);
+
+                Elem(result, e, esize, Elem(result, e, esize) + absdiff);
+            }
+
+            V(d, result);
+        }
+
+        // sabal_advsimd.html
+        public static void Sabal_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool op = false;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size == '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = 64;
+            int part = (int)UInt(Q);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool accumulate = (op == false);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits operand1 = Vpart(datasize, n, part);
+            Bits operand2 = Vpart(datasize, m, part);
+            BigInteger element1;
+            BigInteger element2;
+            Bits absdiff;
+
+            Bits result = (accumulate ? V(2 * datasize, d) : Zeros(2 * datasize));
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                absdiff = Abs(element1 - element2).SubBigInteger(2 * esize - 1, 0);
+
+                Elem(result, e, 2 * esize, Elem(result, e, 2 * esize) + absdiff);
+            }
+
+            V(d, result);
+        }
+
+        // sabd_advsimd.html
+        public static void Sabd_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool ac = false;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size == '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool accumulate = (ac == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+            Bits absdiff;
+
+            Bits result = (accumulate ? V(datasize, d) : Zeros(datasize));
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                absdiff = Abs(element1 - element2).SubBigInteger(esize - 1, 0);
+
+                Elem(result, e, esize, Elem(result, e, esize) + absdiff);
+            }
+
+            V(d, result);
+        }
+
+        // sabdl_advsimd.html
+        public static void Sabdl_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = false;
+            const bool op = true;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size == '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = 64;
+            int part = (int)UInt(Q);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool accumulate = (op == false);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits operand1 = Vpart(datasize, n, part);
+            Bits operand2 = Vpart(datasize, m, part);
+            BigInteger element1;
+            BigInteger element2;
+            Bits absdiff;
+
+            Bits result = (accumulate ? V(2 * datasize, d) : Zeros(2 * datasize));
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                absdiff = Abs(element1 - element2).SubBigInteger(2 * esize - 1, 0);
+
+                Elem(result, e, 2 * esize, Elem(result, e, 2 * esize) + absdiff);
+            }
+
+            V(d, result);
+        }
+
+        // sub_advsimd.html#SUB_asisdsame_only
         public static void Sub_S(Bits size, Bits Rm, Bits Rn, Bits Rd)
         {
-            bool U = true;
+            const bool U = true;
 
             /* Decode Scalar */
             int d = (int)UInt(Rd);
@@ -2705,10 +4554,10 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/sub_advsimd.xml#SUB_asimdsame_only
+        // sub_advsimd.html#SUB_asimdsame_only
         public static void Sub_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
         {
-            bool U = true;
+            const bool U = true;
 
             /* Decode Vector */
             int d = (int)UInt(Rd);
@@ -2750,11 +4599,11 @@ namespace Tester
             V(d, result);
         }
 
-        // https://meriac.github.io/archex/A64_v83A_ISA/subhn_advsimd.xml
+        // subhn_advsimd.html
         public static void Subhn_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
         {
-            bool U = false;
-            bool o1 = true;
+            const bool U = false;
+            const bool o1 = true;
 
             /* Decode */
             int d = (int)UInt(Rd);
@@ -2802,6 +4651,392 @@ namespace Tester
             }
 
             Vpart(d, part, result);
+        }
+
+        // trn1_advsimd.html
+        public static void Trn1_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool op = false;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+            int part = (int)UInt(op);
+            int pairs = elements / 2;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+
+            for (int p = 0; p <= pairs - 1; p++)
+            {
+                Elem(result, 2 * p + 0, esize, Elem(operand1, 2 * p + part, esize));
+                Elem(result, 2 * p + 1, esize, Elem(operand2, 2 * p + part, esize));
+            }
+
+            V(d, result);
+        }
+
+        // trn2_advsimd.html
+        public static void Trn2_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool op = true;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+            int part = (int)UInt(op);
+            int pairs = elements / 2;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+
+            for (int p = 0; p <= pairs - 1; p++)
+            {
+                Elem(result, 2 * p + 0, esize, Elem(operand1, 2 * p + part, esize));
+                Elem(result, 2 * p + 1, esize, Elem(operand2, 2 * p + part, esize));
+            }
+
+            V(d, result);
+        }
+
+        // uaba_advsimd.html
+        public static void Uaba_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool ac = true;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size == '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool accumulate = (ac == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+            Bits absdiff;
+
+            Bits result = (accumulate ? V(datasize, d) : Zeros(datasize));
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                absdiff = Abs(element1 - element2).SubBigInteger(esize - 1, 0);
+
+                Elem(result, e, esize, Elem(result, e, esize) + absdiff);
+            }
+
+            V(d, result);
+        }
+
+        // uabal_advsimd.html
+        public static void Uabal_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool op = false;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size == '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = 64;
+            int part = (int)UInt(Q);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool accumulate = (op == false);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits operand1 = Vpart(datasize, n, part);
+            Bits operand2 = Vpart(datasize, m, part);
+            BigInteger element1;
+            BigInteger element2;
+            Bits absdiff;
+
+            Bits result = (accumulate ? V(2 * datasize, d) : Zeros(2 * datasize));
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                absdiff = Abs(element1 - element2).SubBigInteger(2 * esize - 1, 0);
+
+                Elem(result, e, 2 * esize, Elem(result, e, 2 * esize) + absdiff);
+            }
+
+            V(d, result);
+        }
+
+        // uabd_advsimd.html
+        public static void Uabd_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool ac = false;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size == '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool accumulate = (ac == true);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+            BigInteger element1;
+            BigInteger element2;
+            Bits absdiff;
+
+            Bits result = (accumulate ? V(datasize, d) : Zeros(datasize));
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                absdiff = Abs(element1 - element2).SubBigInteger(esize - 1, 0);
+
+                Elem(result, e, esize, Elem(result, e, esize) + absdiff);
+            }
+
+            V(d, result);
+        }
+
+        // uabdl_advsimd.html
+        public static void Uabdl_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool U = true;
+            const bool op = true;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size == '11' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = 64;
+            int part = (int)UInt(Q);
+            int elements = datasize / esize;
+
+            bool unsigned = (U == true);
+            bool accumulate = (op == false);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits operand1 = Vpart(datasize, n, part);
+            Bits operand2 = Vpart(datasize, m, part);
+            BigInteger element1;
+            BigInteger element2;
+            Bits absdiff;
+
+            Bits result = (accumulate ? V(2 * datasize, d) : Zeros(2 * datasize));
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                element1 = Int(Elem(operand1, e, esize), unsigned);
+                element2 = Int(Elem(operand2, e, esize), unsigned);
+
+                absdiff = Abs(element1 - element2).SubBigInteger(2 * esize - 1, 0);
+
+                Elem(result, e, 2 * esize, Elem(result, e, 2 * esize) + absdiff);
+            }
+
+            V(d, result);
+        }
+
+        // uzp1_advsimd.html
+        public static void Uzp1_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool op = false;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+            int part = (int)UInt(op);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operandl = V(datasize, n);
+            Bits operandh = V(datasize, m);
+
+            Bits zipped = Bits.Concat(operandh, operandl);
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                Elem(result, e, esize, Elem(zipped, 2 * e + part, esize));
+            }
+
+            V(d, result);
+        }
+
+        // uzp2_advsimd.html
+        public static void Uzp2_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool op = true;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+            int part = (int)UInt(op);
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operandl = V(datasize, n);
+            Bits operandh = V(datasize, m);
+
+            Bits zipped = Bits.Concat(operandh, operandl);
+
+            for (int e = 0; e <= elements - 1; e++)
+            {
+                Elem(result, e, esize, Elem(zipped, 2 * e + part, esize));
+            }
+
+            V(d, result);
+        }
+
+        // zip1_advsimd.html
+        public static void Zip1_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool op = false;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+            int part = (int)UInt(op);
+            int pairs = elements / 2;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+
+            int @base = part * pairs;
+
+            for (int p = 0; p <= pairs - 1; p++)
+            {
+                Elem(result, 2 * p + 0, esize, Elem(operand1, @base + p, esize));
+                Elem(result, 2 * p + 1, esize, Elem(operand2, @base + p, esize));
+            }
+
+            V(d, result);
+        }
+
+        // zip2_advsimd.html
+        public static void Zip2_V(bool Q, Bits size, Bits Rm, Bits Rn, Bits Rd)
+        {
+            const bool op = true;
+
+            /* Decode */
+            int d = (int)UInt(Rd);
+            int n = (int)UInt(Rn);
+            int m = (int)UInt(Rm);
+
+            /* if size:Q == '110' then ReservedValue(); */
+
+            int esize = 8 << (int)UInt(size);
+            int datasize = (Q ? 128 : 64);
+            int elements = datasize / esize;
+            int part = (int)UInt(op);
+            int pairs = elements / 2;
+
+            /* Operation */
+            /* CheckFPAdvSIMDEnabled64(); */
+
+            Bits result = new Bits(datasize);
+            Bits operand1 = V(datasize, n);
+            Bits operand2 = V(datasize, m);
+
+            int @base = part * pairs;
+
+            for (int p = 0; p <= pairs - 1; p++)
+            {
+                Elem(result, 2 * p + 0, esize, Elem(operand1, @base + p, esize));
+                Elem(result, 2 * p + 1, esize, Elem(operand2, @base + p, esize));
+            }
+
+            V(d, result);
         }
 #endregion
     }
