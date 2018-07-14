@@ -1,1 +1,1 @@
-Test cases: https://github.com/gdkchan/Ryujinx/tree/master/Ryujinx.Tests/Cpu
+Test cases: https://github.com/Ryujinx/Ryujinx/tree/master/Ryujinx.Tests/Cpu
