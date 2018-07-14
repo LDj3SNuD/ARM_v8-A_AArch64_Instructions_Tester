@@ -1,4 +1,6 @@
-// https://meriac.github.io/archex/A64_v83A_ISA/shared_pseudocode.xml
+// https://developer.arm.com/products/architecture/a-profile/exploration-tools
+// ..\A64_v83A_ISA_xml_00bet6.1\ISA_v83A_A64_xml_00bet6.1_OPT\xhtml\
+
 // https://alastairreid.github.io/asl-lexical-syntax/
 
 // | ------------------------|----------------------------------- |
@@ -29,7 +31,7 @@ namespace Tester
     internal static class AArch64
     {
 #region "exceptions/exceptions/"
-        /* #AArch64.ResetControlRegisters.1 */
+        /* shared_pseudocode.html#AArch64.ResetControlRegisters.1 */
         public static void ResetControlRegisters(bool cold_reset)
         {
             PSTATE.N = cold_reset;
@@ -74,7 +76,7 @@ namespace Tester
 #endregion
 
 #region "functions/registers/"
-        /* #AArch64.ResetGeneralRegisters.0 */
+        /* shared_pseudocode.html#AArch64.ResetGeneralRegisters.0 */
         public static void ResetGeneralRegisters()
         {
             for (int i = 0; i <= 30; i++)
@@ -84,7 +86,7 @@ namespace Tester
             }
         }
 
-        /* #AArch64.ResetSIMDFPRegisters.0 */
+        /* shared_pseudocode.html#AArch64.ResetSIMDFPRegisters.0 */
         public static void ResetSIMDFPRegisters()
         {
             for (int i = 0; i <= 31; i++)
@@ -94,7 +96,7 @@ namespace Tester
             }
         }
 
-        /* #AArch64.ResetSpecialRegisters.0 */
+        /* shared_pseudocode.html#AArch64.ResetSpecialRegisters.0 */
         public static void ResetSpecialRegisters()
         {
             // AArch64 special registers
@@ -103,10 +105,10 @@ namespace Tester
             /* SP_EL1 = bits(64) UNKNOWN; */
             SP_EL1.SetAll(false);
 
-            FPSR.SetAll(false); // FIXME: Temporary solution.
+            FPSR.SetAll(false); // TODO: Add named fields.
         }
 
-        // #impl-aarch64.SP.write.0
+        // shared_pseudocode.html#impl-aarch64.SP.write.0
         public static void SP(Bits value)
         {
             /* int width = value.Count; */
@@ -138,7 +140,7 @@ namespace Tester
             }
         }
 
-        // #impl-aarch64.SP.read.0
+        // shared_pseudocode.html#impl-aarch64.SP.read.0
         public static Bits SP(int width)
         {
             /* assert width IN {8,16,32,64}; */
@@ -164,7 +166,7 @@ namespace Tester
             }
         }
 
-        // #impl-aarch64.V.write.1
+        // shared_pseudocode.html#impl-aarch64.V.write.1
         public static void V(int n, Bits value)
         {
             /* int width = value.Count; */
@@ -175,7 +177,7 @@ namespace Tester
             _V[n] = ZeroExtend(128, value);
         }
 
-        /* #impl-aarch64.V.read.1 */
+        /* shared_pseudocode.html#impl-aarch64.V.read.1 */
         public static Bits V(int width, int n)
         {
             /* assert n >= 0 && n <= 31; */
@@ -184,7 +186,7 @@ namespace Tester
             return _V[n][width - 1, 0];
         }
 
-        /* #impl-aarch64.Vpart.read.2 */
+        /* shared_pseudocode.html#impl-aarch64.Vpart.read.2 */
         public static Bits Vpart(int width, int n, int part)
         {
             /* assert n >= 0 && n <= 31; */
@@ -202,7 +204,7 @@ namespace Tester
             }
         }
 
-        // #impl-aarch64.Vpart.write.2
+        // shared_pseudocode.html#impl-aarch64.Vpart.write.2
         public static void Vpart(int n, int part, Bits value)
         {
             int width = value.Count;
@@ -222,7 +224,7 @@ namespace Tester
             }
         }
 
-        // #impl-aarch64.X.write.1
+        // shared_pseudocode.html#impl-aarch64.X.write.1
         public static void X(int n, Bits value)
         {
             /* int width = value.Count; */
@@ -236,7 +238,7 @@ namespace Tester
             }
         }
 
-        /* #impl-aarch64.X.read.1 */
+        /* shared_pseudocode.html#impl-aarch64.X.read.1 */
         public static Bits X(int width, int n)
         {
             /* assert n >= 0 && n <= 31; */
@@ -254,12 +256,12 @@ namespace Tester
 #endregion
 
 #region "instrs/countop/"
-        // #CountOp
+        // shared_pseudocode.html#CountOp
         public enum CountOp {CountOp_CLZ, CountOp_CLS, CountOp_CNT};
 #endregion
 
 #region "instrs/extendreg/"
-        /* #impl-aarch64.DecodeRegExtend.1 */
+        /* shared_pseudocode.html#impl-aarch64.DecodeRegExtend.1 */
         public static ExtendType DecodeRegExtend(Bits op)
         {
             switch (op)
@@ -284,7 +286,7 @@ namespace Tester
             }
         }
 
-        /* #impl-aarch64.ExtendReg.3 */
+        /* shared_pseudocode.html#impl-aarch64.ExtendReg.3 */
         public static Bits ExtendReg(int N, int reg, ExtendType type, int shift)
         {
             /* assert shift >= 0 && shift <= 4; */
@@ -333,13 +335,13 @@ namespace Tester
             return Extend(Bits.Concat(val[len - 1, 0], Zeros(shift)), N, unsigned);
         }
 
-        // #ExtendType
+        // shared_pseudocode.html#ExtendType
         public enum ExtendType {ExtendType_SXTB, ExtendType_SXTH, ExtendType_SXTW, ExtendType_SXTX,
                                 ExtendType_UXTB, ExtendType_UXTH, ExtendType_UXTW, ExtendType_UXTX};
 #endregion
 
 #region "instrs/integer/bitmasks/"
-        /* #impl-aarch64.DecodeBitMasks.4 */
+        /* shared_pseudocode.html#impl-aarch64.DecodeBitMasks.4 */
         public static (Bits, Bits) DecodeBitMasks(int M, bool immN, Bits imms, Bits immr, bool immediate)
         {
             Bits tmask, wmask;
@@ -402,7 +404,7 @@ namespace Tester
 #endregion
 
 #region "instrs/integer/shiftreg/"
-        /* #impl-aarch64.DecodeShift.1 */
+        /* shared_pseudocode.html#impl-aarch64.DecodeShift.1 */
         public static ShiftType DecodeShift(Bits op)
         {
             switch (op)
@@ -419,7 +421,7 @@ namespace Tester
             }
         }
 
-        /* #impl-aarch64.ShiftReg.3 */
+        /* shared_pseudocode.html#impl-aarch64.ShiftReg.3 */
         public static Bits ShiftReg(int N, int reg, ShiftType type, int amount)
         {
             Bits result = X(N, reg);
@@ -444,8 +446,13 @@ namespace Tester
             return result;
         }
 
-        // #ShiftType
+        // shared_pseudocode.html#ShiftType
         public enum ShiftType {ShiftType_LSL, ShiftType_LSR, ShiftType_ASR, ShiftType_ROR};
+#endregion
+
+#region "instrs/vector/arithmetic/unary/cmp/compareop/"
+        // shared_pseudocode.html#CompareOp
+        public enum CompareOp {CompareOp_GT, CompareOp_GE, CompareOp_EQ, CompareOp_LE, CompareOp_LT};
 #endregion
 
 #region "instrs/vector/reduce/reduceop/"
@@ -493,6 +500,7 @@ namespace Tester
             return result;
         }
 
+        // shared_pseudocode.html#ReduceOp
         public enum ReduceOp {ReduceOp_FMINNUM, ReduceOp_FMAXNUM,
                               ReduceOp_FMIN, ReduceOp_FMAX,
                               ReduceOp_FADD, ReduceOp_ADD};
@@ -518,7 +526,7 @@ namespace Tester
             SP_EL0 = new Bits(64, false);
             SP_EL1 = new Bits(64, false);
 
-            FPSR = new Bits(32, false); // FIXME: Temporary solution.
+            FPSR = new Bits(32, false); // TODO: Add named fields.
 
             PSTATE.N = false;
             PSTATE.Z = false;
@@ -535,7 +543,7 @@ namespace Tester
             return x.And(y);
         }
 
-        // #impl-shared.ASR.2
+        // shared_pseudocode.html#impl-shared.ASR.2
         public static Bits ASR(Bits x, int shift)
         {
             int N = x.Count;
@@ -556,7 +564,7 @@ namespace Tester
             return result;
         }
 
-        // #impl-shared.ASR_C.2
+        // shared_pseudocode.html#impl-shared.ASR_C.2
         public static (Bits, bool) ASR_C(Bits x, int shift)
         {
             int N = x.Count;
@@ -570,13 +578,31 @@ namespace Tester
             return (result, carry_out);
         }
 
-        // #impl-shared.Abs.1
+        // shared_pseudocode.html#impl-shared.Abs.1
         public static BigInteger Abs(BigInteger x)
         {
             return (x >= 0 ? x : -x);
         }
 
-        // #impl-shared.CountLeadingSignBits.1
+        // shared_pseudocode.html#impl-shared.BitCount.1
+        public static int BitCount(Bits x)
+        {
+            int N = x.Count;
+
+            int result = 0;
+
+            for (int i = 0; i <= N - 1; i++)
+            {
+                if (x[i])
+                {
+                    result = result + 1;
+                }
+            }
+
+            return result;
+        }
+
+        // shared_pseudocode.html#impl-shared.CountLeadingSignBits.1
         public static int CountLeadingSignBits(Bits x)
         {
             int N = x.Count;
@@ -584,7 +610,7 @@ namespace Tester
             return CountLeadingZeroBits(EOR(x[N - 1, 1], x[N - 2, 0]));
         }
 
-        // #impl-shared.CountLeadingZeroBits.1
+        // shared_pseudocode.html#impl-shared.CountLeadingZeroBits.1
         public static int CountLeadingZeroBits(Bits x)
         {
             int N = x.Count;
@@ -592,7 +618,7 @@ namespace Tester
             return (N - 1 - HighestSetBit(x));
         }
 
-        // #impl-shared.Elem.read.3
+        // shared_pseudocode.html#impl-shared.Elem.read.3
         public static Bits Elem(/*in */Bits vector, int e, int size)
         {
             /* int N = vector.Count; */
@@ -602,7 +628,7 @@ namespace Tester
             return vector[e * size + size - 1, e * size];
         }
 
-        // #impl-shared.Elem.write.3
+        // shared_pseudocode.html#impl-shared.Elem.write.3
         public static void Elem(/*out */Bits vector, int e, int size, Bits value)
         {
             /* int N = vector.Count; */
@@ -618,7 +644,7 @@ namespace Tester
             return x.Xor(y);
         }
 
-        // #impl-shared.Extend.3
+        // shared_pseudocode.html#impl-shared.Extend.3
         public static Bits Extend(Bits x, int N, bool unsigned)
         {
             if (unsigned)
@@ -631,13 +657,13 @@ namespace Tester
             }
         }
 
-        /* #impl-shared.Extend.2 */
+        /* shared_pseudocode.html#impl-shared.Extend.2 */
         public static Bits Extend(int N, Bits x, bool unsigned)
         {
             return Extend(x, N, unsigned);
         }
 
-        // #impl-shared.HighestSetBit.1
+        // shared_pseudocode.html#impl-shared.HighestSetBit.1
         public static int HighestSetBit(Bits x)
         {
             int N = x.Count;
@@ -653,13 +679,13 @@ namespace Tester
             return -1;
         }
 
-        // #impl-shared.Int.2
+        // shared_pseudocode.html#impl-shared.Int.2
         public static BigInteger Int(Bits x, bool unsigned)
         {
             return (unsigned ? UInt(x) : SInt(x));
         }
 
-        // #impl-shared.IsOnes.1
+        // shared_pseudocode.html#impl-shared.IsOnes.1
         public static bool IsOnes(Bits x)
         {
             int N = x.Count;
@@ -667,7 +693,7 @@ namespace Tester
             return (x == Ones(N));
         }
 
-        // #impl-shared.IsZero.1
+        // shared_pseudocode.html#impl-shared.IsZero.1
         public static bool IsZero(Bits x)
         {
             int N = x.Count;
@@ -675,13 +701,13 @@ namespace Tester
             return (x == Zeros(N));
         }
 
-        // #impl-shared.IsZeroBit.1
+        // shared_pseudocode.html#impl-shared.IsZeroBit.1
         public static bool IsZeroBit(Bits x)
         {
             return IsZero(x);
         }
 
-        // #impl-shared.LSL.2
+        // shared_pseudocode.html#impl-shared.LSL.2
         public static Bits LSL(Bits x, int shift)
         {
             int N = x.Count;
@@ -702,7 +728,7 @@ namespace Tester
             return result;
         }
 
-        // #impl-shared.LSL_C.2
+        // shared_pseudocode.html#impl-shared.LSL_C.2
         public static (Bits, bool) LSL_C(Bits x, int shift)
         {
             int N = x.Count;
@@ -716,7 +742,7 @@ namespace Tester
             return (result, carry_out);
         }
 
-        // #impl-shared.LSR.2
+        // shared_pseudocode.html#impl-shared.LSR.2
         public static Bits LSR(Bits x, int shift)
         {
             int N = x.Count;
@@ -737,7 +763,7 @@ namespace Tester
             return result;
         }
 
-        // #impl-shared.LSR_C.2
+        // shared_pseudocode.html#impl-shared.LSR_C.2
         public static (Bits, bool) LSR_C(Bits x, int shift)
         {
             int N = x.Count;
@@ -751,7 +777,7 @@ namespace Tester
             return (result, carry_out);
         }
 
-        // #impl-shared.Min.2
+        // shared_pseudocode.html#impl-shared.Min.2
         public static int Min(int a, int b)
         {
             if (a <= b)
@@ -764,13 +790,14 @@ namespace Tester
             }
         }
 
-        /* #impl-shared.NOT.1 */
+        /* shared_pseudocode.html#impl-shared.NOT.1 */
         public static Bits NOT(Bits x)
         {
             return x.Not();
         }
 
-        // #impl-shared.Ones.1
+        // shared_pseudocode.html#impl-shared.Ones.1
+        /* shared_pseudocode.html#impl-shared.Ones.0 */
         public static Bits Ones(int N)
         {
             return Replicate(true, N);
@@ -788,7 +815,7 @@ namespace Tester
             return (decimal)value;
         }
 
-        // #impl-shared.ROR.2
+        // shared_pseudocode.html#impl-shared.ROR.2
         public static Bits ROR(Bits x, int shift)
         {
             /* assert shift >= 0; */
@@ -807,7 +834,7 @@ namespace Tester
             return result;
         }
 
-        // #impl-shared.ROR_C.2
+        // shared_pseudocode.html#impl-shared.ROR_C.2
         public static (Bits, bool) ROR_C(Bits x, int shift)
         {
             int N = x.Count;
@@ -821,7 +848,7 @@ namespace Tester
             return (result, carry_out);
         }
 
-        /* #impl-shared.Replicate.1 */
+        /* shared_pseudocode.html#impl-shared.Replicate.1 */
         public static Bits Replicate(int N, Bits x)
         {
             int M = x.Count;
@@ -831,7 +858,7 @@ namespace Tester
             return Replicate(x, N / M);
         }
 
-        /* #impl-shared.Replicate.2 */
+        /* shared_pseudocode.html#impl-shared.Replicate.2 */
         public static Bits Replicate(Bits x, int N)
         {
             int M = x.Count;
@@ -846,13 +873,13 @@ namespace Tester
             return new Bits(dst);
         }
 
-        /* #impl-shared.RoundDown.1 */
+        /* shared_pseudocode.html#impl-shared.RoundDown.1 */
         public static BigInteger RoundDown(decimal x)
         {
             return (BigInteger)Decimal.Floor(x);
         }
 
-        // #impl-shared.RoundTowardsZero.1
+        // shared_pseudocode.html#impl-shared.RoundTowardsZero.1
         public static BigInteger RoundTowardsZero(decimal x)
         {
             if (x == 0.0m)
@@ -869,13 +896,13 @@ namespace Tester
             }
         }
 
-        /* #impl-shared.RoundUp.1 */
+        /* shared_pseudocode.html#impl-shared.RoundUp.1 */
         public static BigInteger RoundUp(decimal x)
         {
             return (BigInteger)Decimal.Ceiling(x);
         }
 
-        // #impl-shared.SInt.1
+        // shared_pseudocode.html#impl-shared.SInt.1
         public static BigInteger SInt(Bits x)
         {
             int N = x.Count;
@@ -898,7 +925,7 @@ namespace Tester
             return result;
         }
 
-        // #impl-shared.SignExtend.2
+        // shared_pseudocode.html#impl-shared.SignExtend.2
         public static Bits SignExtend(Bits x, int N)
         {
             int M = x.Count;
@@ -908,13 +935,13 @@ namespace Tester
             return Bits.Concat(Replicate(x[M - 1], N - M), x);
         }
 
-        /* #impl-shared.SignExtend.1 */
+        /* shared_pseudocode.html#impl-shared.SignExtend.1 */
         public static Bits SignExtend(int N, Bits x)
         {
             return SignExtend(x, N);
         }
 
-        // #impl-shared.UInt.1
+        // shared_pseudocode.html#impl-shared.UInt.1
         public static BigInteger UInt(Bits x)
         {
             int N = x.Count;
@@ -932,7 +959,7 @@ namespace Tester
             return result;
         }
 
-        // #impl-shared.ZeroExtend.2
+        // shared_pseudocode.html#impl-shared.ZeroExtend.2
         public static Bits ZeroExtend(Bits x, int N)
         {
             int M = x.Count;
@@ -942,14 +969,14 @@ namespace Tester
             return Bits.Concat(Zeros(N - M), x);
         }
 
-        /* #impl-shared.ZeroExtend.1 */
+        /* shared_pseudocode.html#impl-shared.ZeroExtend.1 */
         public static Bits ZeroExtend(int N, Bits x)
         {
             return ZeroExtend(x, N);
         }
 
-        // #impl-shared.Zeros.1
-        /* #impl-shared.Zeros.0 */
+        // shared_pseudocode.html#impl-shared.Zeros.1
+        /* shared_pseudocode.html#impl-shared.Zeros.0 */
         public static Bits Zeros(int N)
         {
             return Replicate(false, N);
@@ -957,7 +984,7 @@ namespace Tester
 #endregion
 
 #region "functions/crc/"
-        // #impl-shared.BitReverse.1
+        // shared_pseudocode.html#impl-shared.BitReverse.1
         public static Bits BitReverse(Bits data)
         {
             int N = data.Count;
@@ -972,7 +999,7 @@ namespace Tester
             return result;
         }
 
-        // #impl-shared.Poly32Mod2.2
+        // shared_pseudocode.html#impl-shared.Poly32Mod2.2
         public static Bits Poly32Mod2(Bits _data, Bits poly)
         {
             int N = _data.Count;
@@ -994,7 +1021,7 @@ namespace Tester
 #endregion
 
 #region "functions/integer/"
-        /* #impl-shared.AddWithCarry.3 */
+        /* shared_pseudocode.html#impl-shared.AddWithCarry.3 */
         public static (Bits, Bits) AddWithCarry(int N, Bits x, Bits y, bool carry_in)
         {
             BigInteger unsigned_sum = UInt(x) + UInt(y) + UInt(carry_in);
@@ -1019,11 +1046,11 @@ namespace Tester
         public static Bits SP_EL0;
         public static Bits SP_EL1;
 
-        public static Bits FPSR; // FIXME: Temporary solution.
+        public static Bits FPSR; // TODO: Add named fields.
 #endregion
 
 #region "functions/system/"
-        // #impl-shared.ConditionHolds.1
+        // shared_pseudocode.html#impl-shared.ConditionHolds.1
         public static bool ConditionHolds(Bits cond)
         {
             bool result;
@@ -1068,16 +1095,16 @@ namespace Tester
             return result;
         }
 
-        // #EL3
+        // shared_pseudocode.html#EL3
         public static readonly Bits EL3 = "11";
-        // #EL2
+        // shared_pseudocode.html#EL2
         public static readonly Bits EL2 = "10";
-        // #EL1
+        // shared_pseudocode.html#EL1
         public static readonly Bits EL1 = "01";
-        // #EL0
+        // shared_pseudocode.html#EL0
         public static readonly Bits EL0 = "00";
 
-        /* #impl-shared.HaveEL.1 */
+        /* shared_pseudocode.html#impl-shared.HaveEL.1 */
         public static bool HaveEL(Bits el)
         {
             if (el == EL1 || el == EL0)
@@ -1091,7 +1118,7 @@ namespace Tester
 
         public static ProcState PSTATE;
 
-        /* #ProcState */
+        /* shared_pseudocode.html#ProcState */
         internal struct ProcState
         {
             public void NZCV(Bits nzcv) // ASL: ".<,,,>".
@@ -1120,7 +1147,7 @@ namespace Tester
 #endregion
 
 #region "functions/vector/"
-        // #impl-shared.SatQ.3
+        // shared_pseudocode.html#impl-shared.SatQ.3
         public static (Bits, bool) SatQ(BigInteger i, int N, bool unsigned)
         {
             (Bits result, bool sat) = (unsigned ? UnsignedSatQ(i, N) : SignedSatQ(i, N));
@@ -1128,7 +1155,7 @@ namespace Tester
             return (result, sat);
         }
 
-        // #impl-shared.SignedSatQ.2
+        // shared_pseudocode.html#impl-shared.SignedSatQ.2
         public static (Bits, bool) SignedSatQ(BigInteger i, int N)
         {
             BigInteger result;
@@ -1153,7 +1180,7 @@ namespace Tester
             return (result.SubBigInteger(N - 1, 0), saturated);
         }
 
-        // #impl-shared.UnsignedSatQ.2
+        // shared_pseudocode.html#impl-shared.UnsignedSatQ.2
         public static (Bits, bool) UnsignedSatQ(BigInteger i, int N)
         {
             BigInteger result;
